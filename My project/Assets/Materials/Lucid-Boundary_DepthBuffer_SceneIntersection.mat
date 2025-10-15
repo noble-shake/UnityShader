@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LucidBoundary_ModifyingTextureShader 3DTexture
-  m_Shader: {fileID: 4800000, guid: ac7bbc8606a85064c87644376361d58b, type: 3}
+  m_Name: Lucid-Boundary_DepthBuffer_SceneIntersection
+  m_Shader: {fileID: 4800000, guid: d158f819f75b7f14c8d4e3c712055bef, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -22,14 +22,12 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 11700000, guid: 5dc20d2e24f56a24ea95052654851f39, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _IntersectPower: 1.8
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
+    - _IntersectColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

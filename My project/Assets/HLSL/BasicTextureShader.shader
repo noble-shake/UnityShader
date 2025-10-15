@@ -11,8 +11,8 @@ Shader "LucidBoundary/BasicTextureShader"
     {
         Tags
         {
-            "RenderType" = "Opaque"
-            "QUEUE" = "Geometry"
+            "RenderType" = "Transparent"
+            // "QUEUE" = "Geometry"
             "RenderPipeline" = "UniversalPipeline"
         }
 
@@ -72,7 +72,28 @@ Shader "LucidBoundary/BasicTextureShader"
 
             ENDHLSL            
         }
+        
+        Pass
+        {
+            Name "DepthNormalsOnly"
+            Tags { "LightMode" = "DepthNormalsOnly"}
 
+            ZWrite On
+            ColorMask 0
+
+            HLSLPROGRAM
+
+            #pragma vertex DepthOnlyVertex;
+            #pragma fragment DepthOnlyFragment;
+
+            #include "Packages/com.unity.render-pipelines.universal/Shaders/UnlitInput.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/Shaders/DepthOnlyPass.hlsl"
+
+            #pragma multi_compile_instancing
+            #pragma multi_compile_DOTS_INSTANCING_ON
+
+            ENDHLSL
+        }
     }
     FallBack "Diffuse"
 }
