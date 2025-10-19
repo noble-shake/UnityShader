@@ -26,7 +26,6 @@ Shader "LucidBoundary/BasicTextureShader"
             HLSLPROGRAM
             #pragma vertex vert;
             #pragma fragment frag
-
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
             texture2D _MainTex;
