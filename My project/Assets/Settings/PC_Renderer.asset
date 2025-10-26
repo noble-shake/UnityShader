@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b80c870df77324bafa082f17f76c42, type: 3}
   m_Name: Grayscale Post Processing
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   shader: {fileID: 4800000, guid: d5b2692ed46dad44eabf58e4848c5ac2, type: 3}
 --- !u!114 &7833122117494664109
 MonoBehaviour:

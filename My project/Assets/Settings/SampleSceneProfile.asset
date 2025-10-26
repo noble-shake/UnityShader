@@ -145,10 +145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4c43bd1db85204496a9b4c0ad00074, type: 3}
   m_Name: PPE_GrayscaleSetting
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   strength:
     m_OverrideState: 1
-    m_Value: 0.797
+    m_Value: 0.585
 --- !u!114 &7391319092446245454
 MonoBehaviour:
   m_ObjectHideFlags: 3
