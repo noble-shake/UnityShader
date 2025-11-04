@@ -54,6 +54,7 @@ Shader "LucideBoundary/CustomOutline"
             v2f0 vert(appdata0 i)
             {
                     v2f0 o;
+
                     float3 norm = normalize(i.normalOS);
                     float3 pos = i.positionOS + norm * (_OutlineThick * 0.1f);
                     o.positionWS = TransformObjectToHClip(float4(pos, 1.0f));

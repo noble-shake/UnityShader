@@ -6,7 +6,7 @@ Shader "LucideBoundary/ToonShader"
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         // _Glossiness ("Smoothness", Range(0,1)) = 0.5
         // _Metallic ("Metallic", Range(0,1)) = 0.0
-        // _OutlineThick("Outline Thickness", Float) = 1.0
+        _OutlineThick("Outline Thickness", Float) = 1.0
         _GlossPower("Gloss Power", Float) = 1.0
         _Div("Div Amount", Float) = 1.0
         _BaseColor("Base Color", Color) = (1, 1, 1, 1)
@@ -43,6 +43,7 @@ Shader "LucideBoundary/ToonShader"
                 float4 _BaseColor;
                 float _GlossPower;
                 float _Div;
+                float _OutlineThick;
             CBUFFER_END
 
             struct appdata1
@@ -63,7 +64,10 @@ Shader "LucideBoundary/ToonShader"
             v2f1 vert(appdata1 v)
             {
                 v2f1 o;
-                o.positionWS = TransformObjectToHClip(v.positionOS);
+                float3 norm = -1.0f * normalize(v.normalOS);
+                float3 pos = v.positionOS + norm * (_OutlineThick * 0.1f);
+                o.positionWS = TransformObjectToHClip(float4(pos, 1.0f));
+                // o.positionWS = TransformObjectToHClip(v.positionOS);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.normalWS = TransformObjectToWorldNormal(v.normalOS);
 

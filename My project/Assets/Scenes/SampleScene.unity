@@ -418,15 +418,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.03
+      value: -2.138
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -2.124
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.955
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2818,7 +2818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.55709314
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2826,11 +2826,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.83045
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2838,7 +2838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 247.71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2848,6 +2848,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -127303064186185932, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -127303064186185932, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bb7e3ddfd720c7c46aec34f50379ce12, type: 2}
+    - target: {fileID: -127303064186185932, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bb7e3ddfd720c7c46aec34f50379ce12, type: 2}
     - target: {fileID: 919132149155446097, guid: 37942bb5cc3fd2848a74fc55da177a36, type: 3}
       propertyPath: m_Name
       value: Cute Butterfly (1)

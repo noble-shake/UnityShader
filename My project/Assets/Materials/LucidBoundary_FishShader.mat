@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LucideBoundary_ToonShader_Butterfly
-  m_Shader: {fileID: 4800000, guid: d62ee83c0101a0144822ee9e4076515f, type: 3}
+  m_Name: LucidBoundary_FishShader
+  m_Shader: {fileID: 4800000, guid: 6d53a839c605c984293151b83245ba9e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,9 +29,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Div: 3
-    - _GlossPower: 240
-    - _OutlineThick: 0.02
+    - _BodyStrength: 1
+    - _Height: 1
+    - _Radius: 1
+    - _WaveSpeed: 1
+    - _WaveStrength: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

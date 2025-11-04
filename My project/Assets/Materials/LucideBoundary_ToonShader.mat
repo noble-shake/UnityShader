@@ -30,7 +30,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Div: 3
-    - _GlossPower: 100
+    - _GlossPower: 92.42
     - _OutlineThick: 0.01
     m_Colors:
     - _BaseColor: {r: 1, g: 0.3160377, b: 0.3160377, a: 1}

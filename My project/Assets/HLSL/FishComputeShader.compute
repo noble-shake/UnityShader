@@ -1,0 +1,81 @@
+#pragma kernel FishComputeShader
+
+uniform float3 _TransformMatrices;
+StructuredBuffer<float4x4> _TransformRotation;
+//uniform float _Radius;
+//uniform float _Height;
+uniform float _Scale;
+uniform float4x4 _TerrainObjectToWorld;
+RWStructuredBuffer<float3> _RadiusHeightDirection;
+
+#define TWO_PI 6.28318530718f
+
+float randomRange(float2 seed, float min, float max)
+{
+    float randnum = frac(sin(dot(seed, float2(12.9898, 78.233))) * 43758.5453);
+    return lerp(min, max, randnum);
+}
+
+float randomDirection(float2 seed)
+{
+    float randnum = frac(sin(dot(seed, float2(12.9898, 78.233))) * 43758.5453);
+    float tossVal = lerp(0, 1, randnum);
+    if (tossVal > 0.5f)
+    {
+        return 1.0f;
+    }
+    else
+    {
+        return -1.0f;
+    }
+}
+    
+
+float4x4 rotationMatrixY(float angle)
+{
+    float s, c;
+    sincos(angle, s, c);
+
+    return float4x4
+	(
+		 c, 0, s, 0,
+		 0, 1, 0, 0,
+		-s, 0, c, 0,
+		 0, 0, 0, 1
+	);
+}
+
+[numthreads(64, 1, 1)]
+void FishComputeShader(uint3 id : SV_DispatchThreadID)
+{
+
+    int triStart = id.x * 3;
+
+    float2 randomSeed1 = float2(id.x, id.y);
+    float2 randomSeed2 = float2(id.y, id.x);
+    float2 randomSeed3 = float2(id.y, id.x);
+    float2 randomSeed4 = float2(id.y, id.x);
+    float2 randomSeed5 = float2(id.y, id.x);
+
+    float scaleY = _Scale * randomRange(randomSeed1, 0.3f, 1.0f);
+    float offsetX = randomRange(randomSeed1, -0.2f, 0.2f);
+    float offsetZ = randomRange(randomSeed2, -0.2f, 0.2f);
+    float radiusRand = randomRange(randomSeed3, 0.5f, 3.0f);
+    float heightRand = randomRange(randomSeed4, -0.5f, 0.5f);
+    float directionRand = randomDirection(randomSeed5);
+
+    float4x4 grassTransformMatrix = float4x4
+	(
+		_Scale, 0, 0, _TransformMatrices.x + offsetX,
+		0, scaleY, 0, _TransformMatrices.y,
+		0, 0, _Scale, _TransformMatrices.z + offsetZ,
+		0, 0, 0, 1
+	);
+
+    float4x4 randomRotationMatrix = rotationMatrixY(randomRange(randomSeed1, 0.0f, TWO_PI));
+
+    // _TransformMatrices[id.x] = mul(_TerrainObjectToWorld, mul(grassTransformMatrix, randomRotationMatrix));
+    _TransformRotation[id.x] = randomRotationMatrix;
+    _RadiusHeightDirection[id.x] = float3(radiusRand, heightRand, directionRand);
+    
+}
