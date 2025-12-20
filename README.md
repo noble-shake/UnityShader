@@ -24,3 +24,5 @@ https://lucid-boundary.tistory.com/category/Game%20Dev/Unity%20Shader
 16. Geometry Shader
 17. Compute Shader
 18. Profilling And Optimization (TBD.)
+19. SRP Project - silhouette render feature
+20. SRP Project - tint render feature
