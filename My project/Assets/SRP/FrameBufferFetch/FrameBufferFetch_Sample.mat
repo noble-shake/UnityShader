@@ -7,12 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LucidBoundary_Tessellation_WaterWaveEffect 1
-  m_Shader: {fileID: 4800000, guid: 5c3b604b9c92cb44b9af4f38d1f7ef50, type: 3}
+  m_Name: FrameBufferFetch_Sample
+  m_Shader: {fileID: 4800000, guid: c6535d0924e77ad499d35f5b0166fb36, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - LOD_ON
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -23,21 +22,9 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 76fd347ac653a664bb2300ae26fd3164, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Ints: []
-    m_Floats:
-    - _DstBlend: 2
-    - _SrcBlend: 3
-    - _TessAmount: 14.8
-    - _TessMaxDistance: 50
-    - _TessMinDistance: 20
-    - _WaveSpeed: 3.68
-    - _WaveStrength: 0.152
-    m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    m_Floats: []
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
