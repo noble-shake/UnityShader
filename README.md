@@ -26,3 +26,4 @@ https://lucid-boundary.tistory.com/category/Game%20Dev/Unity%20Shader
 18. Profilling And Optimization (TBD.)
 19. SRP Project - silhouette render feature
 20. SRP Project - tint render feature
+21. Scanner Effect - 명조 치사 붉은 이펙트
