@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0a106e117e3f3fe45badb1d1191f7e25
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 10388
+  packageName: Normal Map Maker
+  packageVersion: 1.2
+  assetPath: Assets/Extensions/unitycoder_com/Demo_NormalMapMaker/Shaders/BumpedDiffuseFixNormal.shader
+  uploadId: 23341

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 77bbe1d59c586de468511ed072ad515d
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 10388
+  packageName: Normal Map Maker
+  packageVersion: 1.2
+  assetPath: Assets/Extensions/unitycoder_com/Demo_NormalMapMaker/Shaders/BumpedSpecularSeparate.shader
+  uploadId: 23341

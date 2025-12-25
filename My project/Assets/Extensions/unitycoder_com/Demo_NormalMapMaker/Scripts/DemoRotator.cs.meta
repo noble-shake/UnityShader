@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d0e626c51c311cb4594486b6666be04a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 10388
+  packageName: Normal Map Maker
+  packageVersion: 1.2
+  assetPath: Assets/Extensions/unitycoder_com/Demo_NormalMapMaker/Scripts/DemoRotator.cs
+  uploadId: 23341

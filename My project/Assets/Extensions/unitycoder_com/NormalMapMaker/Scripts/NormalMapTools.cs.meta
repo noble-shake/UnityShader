@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 42a9e2f4cb5c95546993d0c4fffb9f55
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 10388
+  packageName: Normal Map Maker
+  packageVersion: 1.2
+  assetPath: Assets/Extensions/unitycoder_com/NormalMapMaker/Scripts/NormalMapTools.cs
+  uploadId: 23341

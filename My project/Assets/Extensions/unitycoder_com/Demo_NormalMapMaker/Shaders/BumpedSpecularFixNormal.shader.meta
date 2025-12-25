@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 216e83635bd66e144b7b6bcde32a9de9
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 10388
+  packageName: Normal Map Maker
+  packageVersion: 1.2
+  assetPath: Assets/Extensions/unitycoder_com/Demo_NormalMapMaker/Shaders/BumpedSpecularFixNormal.shader
+  uploadId: 23341

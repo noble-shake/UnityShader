@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 68b70bef7771ce845a94f1b62a2dc399
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 10388
+  packageName: Normal Map Maker
+  packageVersion: 1.2
+  assetPath: Assets/Extensions/unitycoder_com/DemoRunTime/Scenes/scene_runtimeSample.unity
+  uploadId: 23341
