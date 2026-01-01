@@ -1,4 +1,4 @@
-Shader "Lucid-Boundary/PhongShading_GrayScale"
+Shader "Lucid-Boundary/PhongShading_RimLight"
 {
     Properties
     {
@@ -8,7 +8,9 @@ Shader "Lucid-Boundary/PhongShading_GrayScale"
         _Div("DiffuseDiv", Float) = 1
         _SpecularDiv("SpecularDiv", Float) = 1
         _FresnelPower("FresnelPower", Float) = 1
+        _RimPower("Rim Power", Float) = 1
         _FresnelColor("Fresnel Color", Color) = (1, 1, 1, 1)
+        _RimColor("Rim Color", Color) = (1, 1, 1, 1)
     }
     SubShader
     {
@@ -46,6 +48,7 @@ Shader "Lucid-Boundary/PhongShading_GrayScale"
                 float4 vertex : SV_POSITION;
                 float3 normalWS : TEXCOORD1;
                 float3 viewWS : TEXCOORD2;
+                float3 worldPos : TEXCOORD3;
             };
 
             texture2D _MainTex;
@@ -59,6 +62,8 @@ Shader "Lucid-Boundary/PhongShading_GrayScale"
                 float _SpecularDiv;
                 float _FresnelPower;
                 float4 _FresnelColor;
+                float4 _RimColor;
+                float4 _RimPower;
             CBUFFER_END
 
 
@@ -69,8 +74,8 @@ Shader "Lucid-Boundary/PhongShading_GrayScale"
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.normalWS = TransformObjectToWorldNormal(v.normalOS);
 
-                float3 positionWS = mul(unity_ObjectToWorld, v.vertex);
-                o.viewWS = GetWorldSpaceViewDir(positionWS);
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex);
+                o.viewWS = GetWorldSpaceViewDir(o.worldPos);
 
                 return o;
             }
@@ -80,10 +85,8 @@ Shader "Lucid-Boundary/PhongShading_GrayScale"
                 float4 tex = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex ,i.uv);
                 
                 float4 grayscale = tex;
-                float average = (grayscale.x + grayscale.y + grayscale.z) / 3.0;
-                grayscale = float4(average, average, average, grayscale.w);
-                // grayscale = dot(grayscale.xyz, float3(0.3f, 0.59f, 0.11f));
-                texture2D gray2D = 
+                grayscale = dot(grayscale.xyz, float3(0.3f, 0.59f, 0.11f));
+                
                 
                 float3 normal = normalize(i.normalWS);
                 float3 view = normalize(i.viewWS);
@@ -93,9 +96,10 @@ Shader "Lucid-Boundary/PhongShading_GrayScale"
                 
                 // diffuse
                 Light mainLight = GetMainLight();
-                float NdotL = max(0, dot(normal, mainLight.direction) * 0.5f) + 0.5f;
-                float4 grayTex = SAMPLE_TEXTURE2D(grayscale,sampler_MainTex, float2(NdotL, 0));
-                float3 diffuse = mainLight.color * grayTex;
+                Light additionalLight = GetAdditionalLight(1, i.worldPos);
+
+                // float3 diffuse = mainLight.color * max(0, dot(normal, mainLight.direction));
+                float3 diffuse = mainLight.color * ceil(max(0, dot(normal, mainLight.direction)) * _Div)/_Div;
 
                 float3 halfVector = normalize(mainLight.direction + view);
                 float specular = max(0, dot(normal, halfVector));
@@ -104,11 +108,16 @@ Shader "Lucid-Boundary/PhongShading_GrayScale"
                 
                 float fresnel = 1.0f - max(0, dot(normal, view));
                 fresnel = pow(fresnel, _FresnelPower);
-                float3 fresnelColor = mainLight.color * fresnel;
+                float3 fresnelColor = additionalLight.color * fresnel;
                 fresnelColor = fresnelColor * _FresnelColor;
+                
+                float Rim = saturate(dot(normal, view));
+                Rim = pow(1 - Rim, _RimPower);
+                float3 RimColor = mainLight.color + Rim;
+                RimColor = RimColor * _RimColor;
 
                 float4 diffuseLighting = float4(ambient + diffuse, 1.0f);
-                float4 specularLighting = float4(specularColor + fresnelColor, 1.0f);
+                float4 specularLighting = float4(specularColor + fresnelColor + RimColor, 1.0f);
 
 
 
